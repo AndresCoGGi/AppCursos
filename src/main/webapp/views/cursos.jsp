@@ -38,7 +38,7 @@
                             Usuarios<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/views/cursos">Cursos</a>
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/views/cursos.jsp">Cursos</a>
                     </li>
                 </ul>
             </div>
@@ -49,7 +49,56 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron">
                 <div class="container">
-                    
+                    <form method="post"
+                          action="${pageContext.servletContext.contextPath}/CursoServlet">
+                        <div class="form-row">
+                            <div class="col">
+                                <input name="txtidcurso" type="text" 
+                                       class="form-control" 
+                                       placeholder="Id Curso">
+                            </div>
+                            <div class="col">
+                                <input name="txtnombre" type="text" 
+                                       class="form-control" 
+                                       placeholder="Nombre">
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <input name="txthoras" type="text" 
+                                       class="form-control" 
+                                       placeholder="Horas">
+                            </div>
+                            <div class="col">
+                                <input name="txtvalor" type="text" 
+                                       class="form-control" 
+                                       placeholder="Valor curso">
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <select name="txtestado" id="inputState" class="form-control">
+                                    <option value="activo" selected>Activo</option>
+                                    <option value="inactivo" >Inactivo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <button name="accion" value="crear" 
+                                        type="submit" 
+                                        class="btn btn-primary">
+                                    Registrar</button>
+                                <button name="accion" value="listar" 
+                                        type="submit" 
+                                        class="btn btn-primary">
+                                    Listar</button>
+                            </div>
+
+                        </div>
+                    </form>
                 </div>
             </div>
 

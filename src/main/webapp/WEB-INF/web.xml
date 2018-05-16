@@ -8,6 +8,10 @@
         <servlet-name>UsuariosServlet</servlet-name>
         <servlet-class>co.com.poli.appcurso.controller.UsuariosServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CursoServlet</servlet-name>
+        <servlet-class>co.com.poli.appcurso.controller.CursoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>IngresoServlet</servlet-name>
         <url-pattern>/IngresoServlet</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>UsuariosServlet</servlet-name>
         <url-pattern>/UsuariosServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CursoServlet</servlet-name>
+        <url-pattern>/CursoServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -38,7 +38,7 @@
                             Usuarios<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/views/cursos">Cursos</a>
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/views/cursos.jsp">Cursos</a>
                     </li>
                 </ul>
             </div>

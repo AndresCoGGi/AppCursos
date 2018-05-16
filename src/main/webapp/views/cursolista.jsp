@@ -51,27 +51,25 @@
             <div class="jumbotron">
                 <div class="container">
                     <table class="table">
-                        <caption>Lista de Usuarios</caption>
+                        <caption>Lista de Cursos</caption>
                         <thead>
                             <tr>
-                                <th scope="col">Documento</th>
-                                <th scope="col">Nombres</th>
-                                <th scope="col">Apellidos</th>
-                                <th scope="col">Email</th>
+                                <th scope="col">Id Curso</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Horas</th>
+                                <th scope="col">Valor Curso</th>
                                 <th scope="col">Estado</th>
-                                <th scope="col">Rol</th>
                                 <th scope="col">...</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach var="usuario" items="${sessionScope.LISTADO}">
+                            <c:forEach var="curso" items="${sessionScope.LISTADO}">
                                 <tr>
-                                    <td><c:out value="${usuario.getDocumento()}"/></td>
-                                    <td><c:out value="${usuario.getNombres()}"/></td>
-                                    <td><c:out value="${usuario.getApellidos()}"/></td>
-                                    <td><c:out value="${usuario.getEmail()}"/></td>
-                                    <td><c:out value="${usuario.getEstado()}"/></td>
-                                    <td><c:out value="${usuario.getRol()}"/></td>
+                                    <td><c:out value="${curso.getIdCurso()}"/></td>
+                                    <td><c:out value="${curso.getNombre()}"/></td>
+                                    <td><c:out value="${curso.getHoras()}"/></td>
+                                    <td><c:out value="${curso.getValorCurso()}"/></td>
+                                    <td><c:out value="${curso.getEstado()}"/></td>
                                     <td></td>
                                 </tr>
                             </c:forEach>
