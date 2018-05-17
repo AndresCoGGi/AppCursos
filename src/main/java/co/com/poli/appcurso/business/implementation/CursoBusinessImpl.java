@@ -42,7 +42,7 @@ public class CursoBusinessImpl implements ICursoBusiness {
     public String modificarCurso(Curso curso) {
         String respuesta = "Curso no existe";
         Curso cur = obtenerCurso(curso.getIdCurso());
-        if (cur == null){
+        if (cur != null){
             respuesta = cursoDaoImpl.modificarCurso(curso);
         }
         return respuesta;
@@ -52,7 +52,7 @@ public class CursoBusinessImpl implements ICursoBusiness {
     public String eliminarCurso(String idCurso) {
         String respuesta = "Curso no existe";
         Curso cur = obtenerCurso(idCurso);
-        if (cur == null){
+        if (cur != null){
             respuesta = cursoDaoImpl.eliminarCurso(idCurso);
         }
         return respuesta;

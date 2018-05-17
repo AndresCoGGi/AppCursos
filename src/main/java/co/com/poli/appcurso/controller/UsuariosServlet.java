@@ -54,8 +54,14 @@ public class UsuariosServlet extends HttpServlet {
                 rd = request.getRequestDispatcher("/mensaje.jsp");
                 break;
             case "eliminar":
+                String cedula = request.getParameter("txtdocumento");
+                String msj = uBusinessImpl.eliminarUsuario(cedula);
+                List<Usuario> listaUsuarios2 = uBusinessImpl.ObtenerListaUsuarios();
+                session.setAttribute("LISTADO", listaUsuarios2);
+                rd = request.getRequestDispatcher("/views/usuarioslista.jsp");
                 break;
-            case "actualizar":
+            case "modificar":
+                String cedulaMod = request.getParameter("txtdocumento");
                 break;
             case "listar":
                 List<Usuario> listaUsuarios = uBusinessImpl.ObtenerListaUsuarios();

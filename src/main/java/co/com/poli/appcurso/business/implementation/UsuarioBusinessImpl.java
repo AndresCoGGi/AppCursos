@@ -43,7 +43,7 @@ public class UsuarioBusinessImpl implements IUsuarioBusiness{
     public String modificarUsuario(Usuario usuario) {
         String respuesta = "Usuario no existe";
         Usuario user = obtenerUsuario(usuario.getDocumento());
-        if (user==null) {
+        if (user!=null) {
             respuesta = usuarioDaoImpl.modificarUsuario(usuario);
         }
         return respuesta;
@@ -53,7 +53,7 @@ public class UsuarioBusinessImpl implements IUsuarioBusiness{
     public String eliminarUsuario(String documento) {
         String respuesta = "Usuario no existe";
         Usuario user = obtenerUsuario(documento);
-        if (user==null) {
+        if (user!=null) {
             respuesta = usuarioDaoImpl.eliminarUsuario(documento);
         }
         return respuesta;

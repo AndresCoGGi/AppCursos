@@ -34,12 +34,15 @@
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item ">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/views/usuario.jsp">
                             Usuarios<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/views/cursos.jsp">Cursos</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/UsuariosServlet?accion=listar">Listar Usuarios</a>
                     </li>
                 </ul>
             </div>
@@ -50,6 +53,7 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron">
                 <div class="container">
+
                     <table class="table">
                         <caption>Lista de Usuarios</caption>
                         <thead>
@@ -66,13 +70,21 @@
                         <tbody>
                             <c:forEach var="usuario" items="${sessionScope.LISTADO}">
                                 <tr>
+
                                     <td><c:out value="${usuario.getDocumento()}"/></td>
                                     <td><c:out value="${usuario.getNombres()}"/></td>
                                     <td><c:out value="${usuario.getApellidos()}"/></td>
                                     <td><c:out value="${usuario.getEmail()}"/></td>
                                     <td><c:out value="${usuario.getEstado()}"/></td>
                                     <td><c:out value="${usuario.getRol()}"/></td>
+                                    <td>
+                                        <div class="col">
+                                            <a href="${pageContext.servletContext.contextPath}/UsuariosServlet?accion=eliminar&txtdocumento=${usuario.getDocumento()}">Eliminar</a>
+                                            <a href="${pageContext.servletContext.contextPath}/UsuariosServlet?accion=modificar&txtdocumento=${usuario.getDocumento()}">Modificar</a>
+                                        </div> 
+                                    </td>
                                     <td></td>
+                                    </form
                                 </tr>
                             </c:forEach>
                         </tbody>
