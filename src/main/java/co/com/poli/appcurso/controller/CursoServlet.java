@@ -53,8 +53,13 @@ public class CursoServlet extends HttpServlet {
                 rd = request.getRequestDispatcher("/mensaje.jsp");
                 break;
             case "eliminar":
+                String idcurso = request.getParameter("txtidcurso");
+                String msj = cBusinessImpl.eliminarCurso(idcurso);
+                List<Curso> listaCurso = cBusinessImpl.ObtenerListaCursos();
+                session.setAttribute("LISTADO", listaCurso);
+                rd = request.getRequestDispatcher("/views/cursolista.jsp");
                 break;
-            case "actualizar":
+            case "modificar":
                 break;
             case "listar":
                 List<Curso> listaCursos = cBusinessImpl.ObtenerListaCursos();

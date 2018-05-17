@@ -43,6 +43,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/UsuariosServlet?accion=listar">Listar Usuarios</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/CursoServlet?accion=listar">Listar Cursos</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -108,14 +111,9 @@
                             <div class="col">
                                 <button name="accion" value="crear" 
                                         type="submit" 
-                                         class="btn btn-primary">
-                                     Registrar</button>
-                                <button name="accion" value="listar" 
-                                        type="submit" 
-                                         class="btn btn-primary">
-                                     Listar</button>
+                                        class="btn btn-primary">
+                                    Registrar</button>
                             </div>
-
                         </div>
                     </form>
                 </div>

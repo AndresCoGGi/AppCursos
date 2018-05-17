@@ -44,6 +44,9 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/UsuariosServlet?accion=listar">Listar Usuarios</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/CursoServlet?accion=listar">Listar Cursos</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -79,8 +82,10 @@
                                     <td><c:out value="${usuario.getRol()}"/></td>
                                     <td>
                                         <div class="col">
-                                            <a href="${pageContext.servletContext.contextPath}/UsuariosServlet?accion=eliminar&txtdocumento=${usuario.getDocumento()}">Eliminar</a>
-                                            <a href="${pageContext.servletContext.contextPath}/UsuariosServlet?accion=modificar&txtdocumento=${usuario.getDocumento()}">Modificar</a>
+                                            <a class="btn btn-primary" 
+                                               href="${pageContext.servletContext.contextPath}/UsuariosServlet?accion=eliminar&txtdocumento=${usuario.getDocumento()}">Eliminar</a>
+                                            <a class="btn btn-primary"
+                                               href="${pageContext.servletContext.contextPath}/UsuariosServlet?accion=modificar&txtdocumento=${usuario.getDocumento()}">Modificar</a>
                                         </div> 
                                     </td>
                                     <td></td>

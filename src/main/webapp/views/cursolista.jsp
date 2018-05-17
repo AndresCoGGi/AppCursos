@@ -44,6 +44,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/UsuariosServlet?accion=listar">Listar Usuarios</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/CursoServlet?accion=listar">Listar Cursos</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -73,6 +76,14 @@
                                     <td><c:out value="${curso.getHoras()}"/></td>
                                     <td><c:out value="${curso.getValorCurso()}"/></td>
                                     <td><c:out value="${curso.getEstado()}"/></td>
+                                    <td>
+                                        <div class="col">
+                                            <a class="btn btn-primary" 
+                                               href="${pageContext.servletContext.contextPath}/CursoServlet?accion=eliminar&txtidcurso=${curso.getIdCurso()}">Eliminar</a>
+                                            <a class="btn btn-primary"
+                                               href="${pageContext.servletContext.contextPath}/CursoServlet?accion=modificar&txtidcurso=${curso.getIdCurso()}">Modificar</a>
+                                        </div> 
+                                    </td>
                                     <td></td>
                                 </tr>
                             </c:forEach>

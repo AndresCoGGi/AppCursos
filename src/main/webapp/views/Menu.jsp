@@ -43,6 +43,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/UsuariosServlet?accion=listar">Listar Usuarios</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/CursoServlet?accion=listar">Listar Cursos</a>
+                    </li>
                 </ul>
             </div>
         </nav>

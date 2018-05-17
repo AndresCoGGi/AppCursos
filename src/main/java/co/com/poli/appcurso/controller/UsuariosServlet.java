@@ -61,7 +61,6 @@ public class UsuariosServlet extends HttpServlet {
                 rd = request.getRequestDispatcher("/views/usuarioslista.jsp");
                 break;
             case "modificar":
-                String cedulaMod = request.getParameter("txtdocumento");
                 break;
             case "listar":
                 List<Usuario> listaUsuarios = uBusinessImpl.ObtenerListaUsuarios();
