@@ -33,7 +33,7 @@
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/views/usuario.jsp">
                             Usuarios<span class="sr-only">(current)</span></a>
                     </li>
@@ -55,7 +55,7 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron">
                 <div class="container">
-                     
+                    <a>BIENVENIDO A LA PAGINA WEB DE USUARIOS Y CURSOS</a>
                 </div>
             </div>
 

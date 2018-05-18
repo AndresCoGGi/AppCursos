@@ -48,7 +48,7 @@ public class UsuariosServlet extends HttpServlet {
                 Boolean estado = Boolean.valueOf(request.getParameter("txtestado"));
                 String rol = request.getParameter("txtrol");
                 Usuario usuario = new Usuario(documento, nombres, apellidos, email, clave, rol, estado);
-                
+
                 String mensaje = uBusinessImpl.crearUsuario(usuario);
                 session.setAttribute("MENSAJE", mensaje);
                 rd = request.getRequestDispatcher("/mensaje.jsp");
@@ -61,6 +61,24 @@ public class UsuariosServlet extends HttpServlet {
                 rd = request.getRequestDispatcher("/views/usuarioslista.jsp");
                 break;
             case "modificar":
+                String id = request.getParameter("txtdocumento");
+                Usuario user = uBusinessImpl.obtenerUsuario(id);
+                session.setAttribute("MODIFICADO", user);
+                rd = request.getRequestDispatcher("/views/modificarusuario.jsp");
+                break;
+            case "guardar":
+                String documentom = request.getParameter("txtdocumento");
+                String nombresm = request.getParameter("txtnombres");
+                String apellidosm = request.getParameter("txtapellidos");
+                String emailm = request.getParameter("txtemail");
+                String clavem = request.getParameter("txtclave");
+                Boolean estadom = Boolean.valueOf(request.getParameter("txtestado"));
+                String rolm = request.getParameter("txtrol");
+                Usuario usuariom = new Usuario(documentom, nombresm, apellidosm, emailm, clavem, rolm, estadom);
+                String ms = uBusinessImpl.modificarUsuario(usuariom);
+                List<Usuario> listaUsuariosm = uBusinessImpl.ObtenerListaUsuarios();
+                session.setAttribute("LISTADO", listaUsuariosm);
+                rd = request.getRequestDispatcher("/views/usuarioslista.jsp");
                 break;
             case "listar":
                 List<Usuario> listaUsuarios = uBusinessImpl.ObtenerListaUsuarios();

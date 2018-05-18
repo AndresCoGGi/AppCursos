@@ -73,7 +73,6 @@
                         <tbody>
                             <c:forEach var="usuario" items="${sessionScope.LISTADO}">
                                 <tr>
-
                                     <td><c:out value="${usuario.getDocumento()}"/></td>
                                     <td><c:out value="${usuario.getNombres()}"/></td>
                                     <td><c:out value="${usuario.getApellidos()}"/></td>
@@ -89,7 +88,7 @@
                                         </div> 
                                     </td>
                                     <td></td>
-                                    </form
+
                                 </tr>
                             </c:forEach>
                         </tbody>
