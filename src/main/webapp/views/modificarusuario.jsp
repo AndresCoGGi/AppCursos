@@ -34,14 +34,13 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron" >
                 <div class="container" >
-                    <form method="post" var="user" items="${sessionScope.MODIFICADO}"
+                    <form method="post" 
                           action="${pageContext.servletContext.contextPath}/UsuariosServlet">
                         <div class="form-row">
                             <div class="col" >
                                 <input name="txtdocumento" type="text" 
                                        class="form-control"
-                                       disabled="true"
-                                       value="${user.getDocumento()}">
+                                       value="${sessionScope.MODIFICADO.getDocumento()}">
                             </div>
                             <div class="col"></div>
                         </div>
@@ -49,12 +48,12 @@
                             <div class="col">
                                 <input name="txtnombres" type="text" 
                                        class="form-control" 
-                                       value="${user.getNombres()}">
+                                       value="${sessionScope.MODIFICADO.getNombres()}">
                             </div>
                             <div class="col">
                                 <input name="txtapellidos" type="text" 
                                        class="form-control" 
-                                       value="${user.getApellidos()}">
+                                       value="${sessionScope.MODIFICADO.getApellidos()}">
                             </div>
 
                         </div>
@@ -62,12 +61,12 @@
                             <div class="col">
                                 <input name="txtemail" type="text" 
                                        class="form-control" 
-                                       value="${user.getEmail()}">
+                                       value="${sessionScope.MODIFICADO.getEmail()}">
                             </div>
                             <div class="col">
                                 <input name="txtclave" type="password" 
                                        class="form-control" 
-                                       value="${user.getClave()}">
+                                       value="${sessionScope.MODIFICADO.getClave()}">
                             </div>
 
                         </div>
