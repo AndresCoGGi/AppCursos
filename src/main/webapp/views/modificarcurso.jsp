@@ -1,6 +1,6 @@
 <%-- 
-    Document   : modificarusuario
-    Created on : 18-may-2018, 12:03:57
+    Document   : modificarcurso
+    Created on : 20-may-2018, 18:52:13
     Author     : ANDRESCOGI
 --%>
 
@@ -34,58 +34,42 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron" >
                 <div class="container" >
-                    <form method="post" 
-                          action="${pageContext.servletContext.contextPath}/UsuariosServlet">
+                    <form method="post"
+                          action="${pageContext.servletContext.contextPath}/CursoServlet">
                         <div class="form-row">
-                            <div class="col" >
-                                <input name="txtdocumento" type="text" 
+                            <div class="col">
+                                <input name="txtidcurso" type="text" 
                                        class="form-control"
                                        readonly="readonly"
-                                       value="${sessionScope.MODIFICADO.getDocumento()}">
-                            </div>
-                            <div class="col"></div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <input name="txtnombres" type="text" 
-                                       class="form-control" 
-                                       value="${sessionScope.MODIFICADO.getNombres()}">
+                                       value="${sessionScope.MODIFICADO.getIdCurso()}">
                             </div>
                             <div class="col">
-                                <input name="txtapellidos" type="text" 
+                                <input name="txtnombre" type="text" 
                                        class="form-control" 
-                                       value="${sessionScope.MODIFICADO.getApellidos()}">
+                                       value="${sessionScope.MODIFICADO.getNombre()}">
                             </div>
 
                         </div>
                         <div class="form-row">
                             <div class="col">
-                                <input name="txtemail" type="text" 
+                                <input name="txthoras" type="text" 
                                        class="form-control" 
-                                       value="${sessionScope.MODIFICADO.getEmail()}">
+                                       value="${sessionScope.MODIFICADO.getHoras()}">
                             </div>
                             <div class="col">
-                                <input name="txtclave" type="password" 
+                                <input name="txtvalor" type="text" 
                                        class="form-control" 
-                                       value="${sessionScope.MODIFICADO.getClave()}">
+                                       value="${sessionScope.MODIFICADO.getValorCurso()}">
                             </div>
 
                         </div>
                         <div class="form-row">
                             <div class="col">
                                 <select name="txtestado" id="inputState" class="form-control">
-                                    <option value="true" selected>Activo</option>
+                                    <option value="true">Activo</option>
                                     <option value="false" >Inactivo</option>
                                 </select>
                             </div>
-                            <div class="col">
-                                <select name="txtrol" id="inputState" class="form-control">
-                                    <option value="administrador" selected>ADMIN</option>
-                                    <option value="consulta" >Consulta</option>
-                                    <option value="visitante" >Visitante</option>
-                                </select>
-                            </div>
-
                         </div>
                         <div class="form-row">
                             <div class="col">
@@ -94,9 +78,10 @@
                                         class="btn btn-primary">
                                     Actualizar</button>
                                 <a class="btn btn-primary"
-                                        href="${pageContext.servletContext.contextPath}/views/usuarioslista.jsp"
-                                        >Volver</a>
+                                   href="${pageContext.servletContext.contextPath}/views/cursolista.jsp"
+                                   >Volver</a>
                             </div>
+
                         </div>
                     </form>
                 </div>

@@ -60,6 +60,22 @@ public class CursoServlet extends HttpServlet {
                 rd = request.getRequestDispatcher("/views/cursolista.jsp");
                 break;
             case "modificar":
+                String id = request.getParameter("txtidcurso");
+                Curso curs = cBusinessImpl.obtenerCurso(id);
+                session.setAttribute("MODIFICADO", curs);
+                rd = request.getRequestDispatcher("/views/modificarcurso.jsp");
+                break;
+            case "guardar":
+                String idCursom = request.getParameter("txtidcurso");
+                String nombrem = request.getParameter("txtnombre");
+                Double horasm = Double.valueOf(request.getParameter("txthoras"));
+                Double valorm = Double.valueOf(request.getParameter("txtvalor"));
+                Boolean estadom = Boolean.valueOf(request.getParameter("txtestado"));
+                Curso cursom = new Curso(idCursom, nombrem, horasm, valorm, estadom);
+                String ms = cBusinessImpl.modificarCurso(cursom);
+                List<Curso> listaCursosm = cBusinessImpl.ObtenerListaCursos();
+                session.setAttribute("LISTADO", listaCursosm);
+                rd = request.getRequestDispatcher("/views/cursolista.jsp");
                 break;
             case "listar":
                 List<Curso> listaCursos = cBusinessImpl.ObtenerListaCursos();
